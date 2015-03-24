@@ -1,0 +1,144 @@
+//==============================================================================
+
+// Title:
+// Instagram Posts
+
+// Description:
+// Instagram post section styling.
+
+//==============================================================================
+
+.instagram-posts
+  width 100%
+  float left
+  padding 60px 0 0 0
+
+  .section-title
+    background url('../images/instagram-posts-icon.png') no-repeat left center
+
+.instagram-posts__link
+  float right
+  font-weight 700
+  color #3a424c
+  margin 14px 0
+
+.instagram-posts__posts
+  width 100%
+  float left
+
+.instagram-posts__post-01
+  width 100%
+  float left
+  transition transform 0.5s ease-in-out
+
+.instagram-posts__post-02
+.instagram-posts__post-03
+.instagram-posts__post-04
+.instagram-posts__post-05
+  width 100%
+  float left
+  transition transform 0.3s ease
+
+.instagram-posts__posts__overlay
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  opacity 0
+  background rgba(0,0,0,0.7)
+  transition all 0.3s ease
+  z-index 2
+  transform scale(1.1)
+
+.instagram-posts__posts__link
+  width 50%
+  float left
+  position relative
+  overflow hidden
+  cursor pointer
+  &:hover
+    .instagram-posts__posts__overlay
+      opacity 1
+      transform scale(1)
+
+.instagram-posts__posts__overlay__meta-wrapper
+  width 124px
+  height 86px
+  top 0
+  bottom 0
+  right 0
+  left 0
+  margin auto
+  position absolute
+
+.instagram-posts__posts__overlay__date
+  display block
+  height 38px
+  padding 11px 0 0 48px
+  color #fff
+  font-weight 300
+  background url('../images/date-icon.png') no-repeat left
+
+.instagram-posts__posts__overlay__likes
+  display block
+  width 140px
+  height 38px
+  padding 11px 0 0 48px
+  margin 0 0 10px 0
+  color #fff
+  font-weight 300
+  background url('../images/like-icon.png') no-repeat left
+
+.instagram-posts__right-wrapper
+  width 50%
+  float left
+
+//------------------------------------------------------------------------------
+// Retina Media Queries
+//------------------------------------------------------------------------------
+
+@media $mediaRetina
+
+  .instagram-posts .section-title
+    background url('../images/instagram-posts-icon@2x.png') no-repeat left center
+    background-size 39px
+
+  .instagram-posts__posts__overlay__date
+    background url('../images/date-icon@2x.png') no-repeat left
+    background-size 38px
+
+  .instagram-posts__posts__overlay__likes
+    background url('../images/like-icon@2x.png') no-repeat left
+    background-size 38px
+
+//------------------------------------------------------------------------------
+// Media Queries
+//------------------------------------------------------------------------------
+
+@media (max-width: 380px)
+
+  .instagram-posts
+    padding 30px 0 0 0
+
+  .instagram-posts__link
+    display none
+
+@media (max-width: 400px)
+
+  .instagram-posts__posts__link
+  .instagram-posts__right-wrapper
+    width 100%
+
+  .instagram-posts__right-wrapper .instagram-posts__posts__link
+    width 100%
+
+@media (min-width: 401px) and (max-width: 730px)
+
+  .instagram-posts__posts__link
+  .instagram-posts__right-wrapper
+    width 100%
+
+  .instagram-posts__right-wrapper .instagram-posts__posts__link
+    width 50%
+

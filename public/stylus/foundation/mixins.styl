@@ -1,0 +1,25 @@
+//==============================================================================
+
+// Title:
+// Mixins
+
+// Description:
+// Stylus mixins
+
+//==============================================================================
+
+//Custom width
+responsive(target, context)
+  ((target / context) * 100) %
+
+clearfix()
+  // micro clearfix hack by Nicolas Gallagher
+  // For modern browsers
+  &:before
+  &:after
+      content ""
+      display table
+  &:after
+      clear both
+  // For IE 6/7 (trigger hasLayout)
+  *zoom 1

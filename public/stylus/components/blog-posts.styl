@@ -1,0 +1,122 @@
+//==============================================================================
+
+// Title:
+// Blog Posts
+
+// Description:
+// Styling for blog posts section
+
+//==============================================================================
+
+.blog-posts
+  width 100%
+  float left
+  padding 70px 0 100px
+  border-bottom 1px solid #d5d5d5
+
+  .section-title
+    background url('../images/blog-posts-icon.png') no-repeat left center
+
+.blog-posts__link
+  float right
+  font-weight 700
+  color #3a424c
+  margin 14px 0
+
+.blog-posts__list
+  width 100%
+  float left
+  clear both
+  border-top 1px solid #ededed
+
+.blog-posts__list__post
+  width 100%
+  float left
+  border-bottom 1px solid #ededed
+
+.blog-posts__list__post__link
+  width 100%
+  float left
+  padding-top 15px
+  padding-bottom 15px
+  color #6d7681
+  position relative
+  transition all 0.3s ease
+  &:hover
+    .blog-posts__list__post__link__date-posted
+      color #59d2d1
+
+.blog-posts__list__post__link__hover-icon
+  opacity 0
+  left -20px
+  width 12px
+  height 18px
+  position absolute
+  background url('../images/blog-hover-icon.png') no-repeat
+  transition all 0.3s ease
+
+.blog-posts__list__post__link__date-posted
+  position absolute
+  right 0
+  top 17px
+  color #bac6d5
+  font-size 0.8125em
+  transition color 0.3s ease
+
+//------------------------------------------------------------------------------
+// Retina Media Queries
+//------------------------------------------------------------------------------
+
+@media $mediaRetina
+
+  .blog-posts .section-title
+    background url('../images/blog-posts-icon@2x.png') no-repeat left center
+    background-size 39px
+
+  .blog-posts__list__post__link__hover-icon
+    background url('../images/blog-hover-icon@2x.png') no-repeat
+    background-size 100%
+
+//------------------------------------------------------------------------------
+// Media Queries
+//------------------------------------------------------------------------------
+
+@media (max-width: 700px)
+
+  .blog-posts__list__post__link__date-posted
+    position relative
+    margin 10px 0 0 0
+    top 0
+
+  .blog-posts__list__post__link:hover
+    padding-left 0px
+    text-decoration none
+    .blog-posts__list__post__link__hover-icon
+    .blog-posts__list__post__link__date-posted
+      color #59d2d1
+
+  .blog-posts__list__post__link__date-posted
+    width 100%
+    float left
+
+@media (min-width: 701px)
+
+  .blog-posts__list__post__link:hover
+    padding-left 20px
+    text-decoration none
+    .blog-posts__list__post__link__hover-icon
+      opacity 1
+      left 0
+    .blog-posts__list__post__link__date-posted
+      color #59d2d1
+
+@media (max-width: 380px)
+
+  .blog-posts
+    padding 30px 0 40px
+
+  .section-title
+    margin 0 0 30px 0
+
+  .blog-posts__link
+    display none

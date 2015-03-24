@@ -1,0 +1,105 @@
+//==============================================================================
+
+// Title:
+// Header Styling
+
+// Description:
+// Styling for the page header.
+
+//==============================================================================
+
+.header
+  top 0
+  left 0
+  right 0
+  padding 0 0 70px 0
+  background #fff
+  position fixed
+  z-index 1
+
+.header__title
+  max-width 600px
+  float left
+  margin 70px 0 30px
+  font-size 3.563em
+  font-family $headingFont
+  font-weight 900
+  color #3a424c
+  line-height 120%
+
+.header__title__heighlight
+  color #59d2d1
+  margin 0 10px 0 0
+
+.header__spacer
+  float left
+  clear both
+
+.header__address
+  float left
+  margin 40px 0 20px 0
+  clear both
+  color #3a424c
+  font-weight 700
+
+.header__social-links
+  float left
+  clear both
+
+.header__social-links__twitter
+.header__social-links__dribbble
+.header__social-links__github
+  width 25px
+  height 25px
+  display block
+  float left
+  margin 0 5px 0 0
+  &:hover
+    opacity 0.8
+
+.header__social-links__twitter
+  background url('../images/twitter-icon.png') no-repeat
+
+.header__social-links__dribbble
+  background url('../images/dribbble-icon.png') no-repeat
+
+.header__social-links__github
+  background url('../images/github-icon.png') no-repeat
+
+//------------------------------------------------------------------------------
+// Retina Icons
+//------------------------------------------------------------------------------
+
+@media $mediaRetina
+
+  .header__social-links__twitter
+    background url('../images/twitter-icon@2x.png') no-repeat
+    background-size 100%
+
+  .header__social-links__dribbble
+    background url('../images/dribbble-icon@2x.png') no-repeat
+    background-size 100%
+
+  .header__social-links__github
+    background url('../images/github-icon@2x.png') no-repeat
+    background-size 100%
+
+//------------------------------------------------------------------------------
+// Media Queries
+//------------------------------------------------------------------------------
+
+@media (max-width: 320px)
+
+  .header__title
+    font-size 2em
+    margin 40px 0 30px
+
+@media (min-width: 321px) and (max-width:393px)
+
+  .header__title
+    font-size 2.5em
+
+@media (min-width:394px) and (max-width: 616px)
+
+  .header__title
+    font-size 3em

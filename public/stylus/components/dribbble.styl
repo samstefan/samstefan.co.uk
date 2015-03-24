@@ -1,0 +1,120 @@
+//==============================================================================
+
+// Title:
+// Dribbble
+
+// Description:
+// Dribbble section styling
+
+//==============================================================================
+
+.dribbble
+  width 100%
+  float left
+  padding 70px 0 100px
+  border-bottom 1px solid #d5d5d5
+
+  .section-title
+    background url('../images/dribbble-section-icon.png') no-repeat left center
+
+.dribbble__link
+  float right
+  font-weight 700
+  color #3a424c
+  margin 14px 0
+  overflow hidden
+
+.dribbble__shots-wrapper
+  width 100%
+  max-width 1246px
+  margin 0 auto
+  padding 0 20px
+  text-align center
+
+.dribbble__shots__link
+  width 33.33%
+  position relative
+  float left
+  overflow hidden
+
+  img
+    width 100%
+    max-width 400px
+    display inline-block
+    padding 0 1px
+    margin 1px 0
+
+  &:hover
+    .dribbble__shots__overlay
+      transform scale(1)
+      opacity 1
+
+.dribbble__shots__overlay
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  opacity 0
+  background rgba(0,0,0,0.7)
+  transition all 0.3s ease
+  z-index 2
+  transform scale(1.1)
+
+.dribbble__shots__overlay__meta-wrapper
+  width 109px
+  height 38px
+  top 0
+  bottom 0
+  right 0
+  left 0
+  margin auto
+  position absolute
+
+.dribbble__shots__overlay__meta__likes
+  display block
+  width 109px
+  height 38px
+  padding 11px 0 0 48px
+  margin 0 0 10px 0
+  color #fff
+  font-weight 300
+  background url('../images/like-icon.png') no-repeat left
+
+//------------------------------------------------------------------------------
+// Retina Media Queries
+//------------------------------------------------------------------------------
+
+@media $mediaRetina
+
+  .dribbble .section-title
+    background url('../images/dribbble-section-icon@2x.png') no-repeat left center
+    background-size 39px
+
+  .dribbble__shots__overlay__meta__likes
+    background url('../images/like-icon@2x.png') no-repeat left
+    background-size 38px
+
+//------------------------------------------------------------------------------
+// Media Queries
+//------------------------------------------------------------------------------
+
+@media (max-width: 400px)
+
+  .dribbble
+    padding 30px 0 30px 0
+
+  .dribbble__shots__link
+    width 100%
+    margin 0 0 20px 0
+
+  .dribbble__link
+    display none
+
+@media (min-width: 401px) and (max-width: 850px)
+
+  .dribbble__shots__link
+    width 50%
+
+  .dribbble__link
+    display none

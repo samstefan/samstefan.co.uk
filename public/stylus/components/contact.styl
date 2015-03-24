@@ -1,0 +1,66 @@
+//==============================================================================
+
+// Title:
+// Contact styling
+
+// Description:
+// Styling for the contact section
+
+//==============================================================================
+
+.contact
+  width 100%
+  float left
+  padding 70px 0 100px
+
+  .section-title
+    background url('../images/contact-icon.png') no-repeat left center
+
+.contact__content
+  width 100%
+  float left
+  font-size 3.563em
+  line-height 120%
+  font-family $headingFont
+  font-weight 900
+  color #3a424c
+
+  a
+    color #3a424c
+    border-bottom 3px solid #59d2d1
+    transition 0.3s ease border
+    &:hover
+      text-decoration none
+      border-bottom 3px solid #3a424c
+
+//------------------------------------------------------------------------------
+// Retina Media Queries
+//------------------------------------------------------------------------------
+
+@media $mediaRetina
+
+  .contact .section-title
+    background url('../images/contact-icon@2x.png') no-repeat left center
+    background-size 39px
+
+//------------------------------------------------------------------------------
+// Media Queries
+//------------------------------------------------------------------------------
+
+@media (max-width: 400px)
+
+  .contact__content
+    font-size 1.5em
+
+  .contact
+    padding 40px 0 30px
+
+@media (min-width: 401px) and (max-width: 520px)
+
+  .contact__content
+    font-size 2em
+
+@media (min-width: 521px) and (max-width: 616px)
+
+  .contact__content
+    font-size 3em

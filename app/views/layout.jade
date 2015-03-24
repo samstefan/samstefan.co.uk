@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+
+    //- Meta Tags
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0")
+
+    //- Search Engine Stuff
+    meta(name="description",content="The online portfolio of the graphic designer Sam Stefan.")
+    meta(name="author",content="Sam Stefan - hello@samstefan.co.uk")
+    meta(name="robots",content="all")
+
+    title= title
+
+    //- Favicon
+    link(rel="shortcut icon",href="/images/favicon.png")
+
+    //- Style sheets
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    //- Scripts
+    script(defer, src="/js/build/app.min.js")
+
+    //- Typekit async
+    script.
+      (function() {
+        var config = {
+          kitId: 'aph6vni'
+        }
+        var d = false
+        var tk = document.createElement('script')
+        tk.src = '//use.typekit.net/' + config.kitId + '.js'
+        tk.type = 'text/javascript'
+        tk.async = 'true'
+        tk.onload = tk.onreadystatechange = function() {
+          var rs = this.readyState
+          if (d || rs && rs != 'complete' && rs != 'loaded') return
+          d = true
+          try { Typekit.load(config); } catch (e) {}
+        }
+        var s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(tk, s)
+      })()
+
+    body
+
+      include components/header
+
+      block content
+
+      include components/footer
+
+    block javascript
+
+    script.
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18552884-1']);
+      _gaq.push(['_setDomainName', 'samstefan.co.uk']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

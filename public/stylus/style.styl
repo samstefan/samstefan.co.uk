@@ -1,0 +1,57 @@
+//==============================================================================
+
+// Title:
+// Main Stylus Files
+
+// Description:
+// All imports should be done here.
+// Keep your CSS out of this file.
+
+// Content Index:
+// 01 - Resets and mixins
+// 02 - Website foundations
+// 03 - Website components
+// 05 - Page helpers
+
+//==============================================================================
+
+//==============================================================================
+// 01 - Resets and mixins
+//==============================================================================
+
+@import 'nib'
+@import './foundation/mixins.styl'
+
+// Nib reset
+global-reset()
+
+//==============================================================================
+// 02 - Website foundations
+//==============================================================================
+
+@import './foundation/variables.styl'
+@import './foundation/typography.styl'
+@import './foundation/structure.styl'
+@import './foundation/btns.styl'
+@import './foundation/forms.styl'
+
+//==============================================================================
+// 03 - Website components
+//==============================================================================
+
+@import './components/header.styl'
+@import './components/footer.styl'
+@import './components/blog-posts.styl'
+@import './components/instagram-posts.styl'
+@import './components/recent-tweets.styl'
+@import './components/dribbble.styl'
+@import './components/github.styl'
+@import './components/contact.styl'
+@import './components/blog.styl'
+
+//==============================================================================
+// 05 - Page helpers
+//==============================================================================
+
+// This must be kept at the bottom encase helpers require overrides.
+@import './foundation/helpers.styl'

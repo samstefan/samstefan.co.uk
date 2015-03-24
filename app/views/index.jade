@@ -1,0 +1,104 @@
+extends layout
+
+block content
+
+  div.home-page
+
+    section.blog-posts
+      div.content-wrapper
+        h2.section-title Lastest Blog Posts
+        a(href="http://blog.samstefan.co.uk", target="_blank").blog-posts__link /blog
+
+        ul.blog-posts__list
+          each post in feedData.tumblr
+            li.blog-posts__list__post
+              a(href=post.post_url, title=post.title).blog-posts__list__post__link
+                span.blog-posts__list__post__link__hover-icon
+                | !{post.title}
+                span.blog-posts__list__post__link__date-posted !{post.date}
+
+    section.instagram-posts
+      div.content-wrapper
+        h2.section-title Instagram
+        a(href="http://instagram.com/iamsamstefan", target="_blank").instagram-posts__link /iamsamstefan
+
+      div.instagram-posts__posts
+        a(href=feedData.instagram[0].link).instagram-posts__posts__link.instagram-posts__posts__link--half-width
+          div.instagram-posts__posts__overlay
+            div.instagram-posts__posts__overlay__meta-wrapper
+              span.instagram-posts__posts__overlay__likes !{feedData.instagram[0].likes} Likes
+              span.instagram-posts__posts__overlay__date !{feedData.instagram[0].posted}
+          img(src=feedData.instagram[0].image).instagram-posts__post-01
+        div.instagram-posts__right-wrapper
+          a(href=feedData.instagram[1].link).instagram-posts__posts__link
+            div.instagram-posts__posts__overlay
+              div.instagram-posts__posts__overlay__meta-wrapper
+                span.instagram-posts__posts__overlay__likes !{feedData.instagram[1].likes} Likes
+                span.instagram-posts__posts__overlay__date !{feedData.instagram[1].posted}
+            img(src=feedData.instagram[1].image).instagram-posts__post-02
+          a(href=feedData.instagram[2].link).instagram-posts__posts__link
+            div.instagram-posts__posts__overlay
+              div.instagram-posts__posts__overlay__meta-wrapper
+                span.instagram-posts__posts__overlay__likes !{feedData.instagram[2].likes} Likes
+                span.instagram-posts__posts__overlay__date !{feedData.instagram[2].posted}
+            img(src=feedData.instagram[2].image).instagram-posts__post-03
+          a(href=feedData.instagram[3].link).instagram-posts__posts__link
+            div.instagram-posts__posts__overlay
+              div.instagram-posts__posts__overlay__meta-wrapper
+                span.instagram-posts__posts__overlay__likes !{feedData.instagram[3].likes} Likes
+                span.instagram-posts__posts__overlay__date !{feedData.instagram[3].posted}
+            img(src=feedData.instagram[3].image).instagram-posts__post-04
+          a(href=feedData.instagram[4].link).instagram-posts__posts__link
+            div.instagram-posts__posts__overlay
+              div.instagram-posts__posts__overlay__meta-wrapper
+                span.instagram-posts__posts__overlay__likes !{feedData.instagram[4].likes} Likes
+                span.instagram-posts__posts__overlay__date !{feedData.instagram[4].posted}
+            img(src=feedData.instagram[4].image).instagram-posts__post-05
+
+    section.recent-tweets
+      div.content-wrapper
+        h2.section-title Recent Tweets
+        a(href="http://twitter.com/samstefan", target="_blank").recent-tweets__link /samstefan
+
+        ul.recent-tweets__list
+          each tweet in feedData.twitter
+            li.recent-tweets__list__post
+              div.recent-tweets__list__post__content !{tweet.text}
+              a(href=tweet.permalink).recent-tweets__list__post__date !{tweet.created_at}
+
+    section.dribbble
+      div.content-wrapper
+        h2.section-title Dribbble
+        a(href="https://dribbble.com/samstefan", target="_blank").dribbble__link /samstefan
+
+      div.dribbble__shots-wrapper
+        each post in feedData.dribble
+          a(href=post.url).dribbble__shots__link
+            div.dribbble__shots__overlay
+              div.dribbble__shots__overlay__meta-wrapper
+                span.dribbble__shots__overlay__meta__likes !{post.likes_count} Likes
+            img(src=post.image_url)
+
+    section.github
+      div.content-wrapper
+        h2.section-title GitHub
+        a(href="https://github.com/samstefan", target="_blank").github__link /samstefan
+
+        div.github__projects-wrapper
+          ul.github__projects
+            each repo in feedData.github
+              li.github__projects__project
+                a(href=repo.url).github__projects__project__link
+                  div.github__projects__project__link__name !{repo.name}
+                  div.github__projects__project__link__description !{repo.description}
+                  div.github__projects__project__link__stars !{repo.stars}
+
+    section.contact
+      div.content-wrapper
+        h2.section-title Contact
+
+        div.contact-wrapper
+          p.contact__content If you'd like to get in contact you can email me at 
+           a(href="mailto:hello@samstefan.co.uk", target="_blank") hello@samstefan.co.uk
+           |  or send me a toot on Twitter 
+           a(href="https://twitter.com/samstefan", target="_blank") @samstefan
