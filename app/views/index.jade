@@ -10,9 +10,9 @@ block content
         a(href="http://blog.samstefan.co.uk", target="_blank").blog-posts__link /blog
 
         ul.blog-posts__list
-          each post in feedData.tumblr
+          each post in feedData.blog
             li.blog-posts__list__post
-              a(href=post.post_url, title=post.title).blog-posts__list__post__link
+              a(href=post.url, title=post.title).blog-posts__list__post__link
                 span.blog-posts__list__post__link__hover-icon
                 | !{post.title}
                 span.blog-posts__list__post__link__date-posted !{post.date}
