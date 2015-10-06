@@ -73,11 +73,11 @@ block content
 
       div.dribbble__shots-wrapper
         each post in feedData.dribble
-          a(href=post.url).dribbble__shots__link
+          a(href=post.html_url).dribbble__shots__link
             div.dribbble__shots__overlay
               div.dribbble__shots__overlay__meta-wrapper
                 span.dribbble__shots__overlay__meta__likes !{post.likes_count} Likes
-            img(src=post.image_url)
+            img(src=post.images.normal)
 
     section.github
       div.content-wrapper
@@ -98,7 +98,7 @@ block content
         h2.section-title Contact
 
         div.contact-wrapper
-          p.contact__content If you'd like to get in contact you can email me at 
+          p.contact__content If you'd like to get in contact you can email me at
            a(href="mailto:hello@samstefan.co.uk", target="_blank") hello@samstefan.co.uk
-           |  or send me a toot on Twitter 
+           |  or send me a toot on Twitter
            a(href="https://twitter.com/samstefan", target="_blank") @samstefan
