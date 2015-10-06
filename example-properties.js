@@ -15,7 +15,10 @@ var _ = require('lodash')
         { key: ''
         , blog: ''
         }
-      , dribbble: { user: '' }
+      , dribbble:
+        { user: ''
+        , token: ''
+        }
       , instagram:
         { user: ''
         , token: ''
