@@ -23,37 +23,14 @@ block content
         a(href="http://instagram.com/iamsamstefan", target="_blank").instagram-posts__link /iamsamstefan
 
       div.instagram-posts__posts
-        a(href=feedData.instagram[0].link).instagram-posts__posts__link.instagram-posts__posts__link--half-width
-          div.instagram-posts__posts__overlay
-            div.instagram-posts__posts__overlay__meta-wrapper
-              span.instagram-posts__posts__overlay__likes !{feedData.instagram[0].likes} Likes
-              span.instagram-posts__posts__overlay__date !{feedData.instagram[0].posted}
-          img(src=feedData.instagram[0].image).instagram-posts__post-01
-        div.instagram-posts__right-wrapper
-          a(href=feedData.instagram[1].link).instagram-posts__posts__link
+        each post in feedData.instagram
+
+          a(href=post.link).instagram-posts__posts__link
             div.instagram-posts__posts__overlay
               div.instagram-posts__posts__overlay__meta-wrapper
-                span.instagram-posts__posts__overlay__likes !{feedData.instagram[1].likes} Likes
-                span.instagram-posts__posts__overlay__date !{feedData.instagram[1].posted}
-            img(src=feedData.instagram[1].image).instagram-posts__post-02
-          a(href=feedData.instagram[2].link).instagram-posts__posts__link
-            div.instagram-posts__posts__overlay
-              div.instagram-posts__posts__overlay__meta-wrapper
-                span.instagram-posts__posts__overlay__likes !{feedData.instagram[2].likes} Likes
-                span.instagram-posts__posts__overlay__date !{feedData.instagram[2].posted}
-            img(src=feedData.instagram[2].image).instagram-posts__post-03
-          a(href=feedData.instagram[3].link).instagram-posts__posts__link
-            div.instagram-posts__posts__overlay
-              div.instagram-posts__posts__overlay__meta-wrapper
-                span.instagram-posts__posts__overlay__likes !{feedData.instagram[3].likes} Likes
-                span.instagram-posts__posts__overlay__date !{feedData.instagram[3].posted}
-            img(src=feedData.instagram[3].image).instagram-posts__post-04
-          a(href=feedData.instagram[4].link).instagram-posts__posts__link
-            div.instagram-posts__posts__overlay
-              div.instagram-posts__posts__overlay__meta-wrapper
-                span.instagram-posts__posts__overlay__likes !{feedData.instagram[4].likes} Likes
-                span.instagram-posts__posts__overlay__date !{feedData.instagram[4].posted}
-            img(src=feedData.instagram[4].image).instagram-posts__post-05
+                span.instagram-posts__posts__overlay__likes !{post.likes} Likes
+                span.instagram-posts__posts__overlay__date !{post.posted}
+            img(src=post.image)
 
     section.recent-tweets
       div.content-wrapper
