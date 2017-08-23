@@ -17,20 +17,21 @@ block content
                 | !{post.title}
                 span.blog-posts__list__post__link__date-posted !{post.date}
 
-    section.instagram-posts
-      div.content-wrapper
-        h2.section-title Instagram
-        a(href="http://instagram.com/iamsamstefan", target="_blank").instagram-posts__link /iamsamstefan
+    if feedData.instagram.length > 0
+      section.instagram-posts
+        div.content-wrapper
+          h2.section-title Instagram
+          a(href="http://instagram.com/iamsamstefan", target="_blank").instagram-posts__link /iamsamstefan
 
-      div.instagram-posts__posts
-        each post in feedData.instagram
+        div.instagram-posts__posts
+          each post in feedData.instagram
 
-          a(href=post.link).instagram-posts__posts__link
-            div.instagram-posts__posts__overlay
-              div.instagram-posts__posts__overlay__meta-wrapper
-                span.instagram-posts__posts__overlay__likes !{post.likes} Likes
-                span.instagram-posts__posts__overlay__date !{post.posted}
-            img(src=post.image)
+            a(href=post.link).instagram-posts__posts__link
+              div.instagram-posts__posts__overlay
+                div.instagram-posts__posts__overlay__meta-wrapper
+                  span.instagram-posts__posts__overlay__likes !{post.likes} Likes
+                  span.instagram-posts__posts__overlay__date !{post.posted}
+              img(src=post.image)
 
     section.recent-tweets
       div.content-wrapper
